@@ -2,8 +2,8 @@ Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
 ## Mijn spel: *naam van het spel*
 Gemaakt door:
-- *naam van leerling 1*
-- *naam van leerling 2*
+- Alyssa Sijtema
+
 
 ## Mijn planning
 
@@ -11,15 +11,17 @@ Basis: uitleg, spelen, afgaan en punten
 - [x] maak index.html, style.css en script.js met canvas
 - [ ] teken speler met rect
 - [ ] beweeg speler
-- [ ] ... *(vul zelf aan)*
+- [ ] speler kan rennen 
 - [ ] punten op scherm zetten
 - [ ] punten kunnen scoren
-- [ ] uitlegscherm
+- [ ] level gaat steeds omhoog 
+- [ ] hoe hoger het level hoe sneller de speler rent
 
-Uitbreiding: *bedenk iets, bijvoorbeeld meer tegenstanders*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+
+Uitbreiding: *mijn poppetje vlucht voor coronabacteriën*
+- [ ] mijn poppetje rent over blokken
+- [ ] blokken tekenen 
+- [ ] laten rennen over de blokken
 
 Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
 - [ ] *later uitwerken*
