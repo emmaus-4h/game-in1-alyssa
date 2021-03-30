@@ -23,8 +23,8 @@ Uitbreiding: *mijn poppetje vlucht voor coronabacteriën*
 - [ ] blokken tekenen 
 - [ ] laten rennen over de blokken
 
-Uitbreiding: *bedenk iets, bijvoorbeeld bewegende achtergrond*
-- [ ] *later uitwerken*
+Uitbreiding: * bewegende achtergrond*
+- [ ] de achtegrond beweegt met mijn poppetje mee
 - [ ] *later uitwerken*
 - [ ] *later uitwerken*
 
