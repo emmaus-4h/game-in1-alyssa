@@ -78,16 +78,7 @@ var tekenKogel = function(x, y) {
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
-var tekenSpeler = function() {
-
-var faceX = 202;
-var faceY = 208; 
-fill(255,255,0)
-  ellipse(faceX,faceY, 300, 300);
-  fill(46,46,41)
-  ellipse(faceX - 45, faceY - 57, 40, 40)
-  fill(252,65,65);
-  ellipse(faceX + 55, faceY + 32,120,136);
+var tekenSpeler = function(){
   
 };
 
@@ -159,7 +150,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background('blue');
+  background(135,206,255);
 }
 
 

@@ -25,8 +25,8 @@ Uitbreiding: *mijn poppetje vlucht voor coronabacteriën*
 
 Uitbreiding: * bewegende achtergrond*
 - [ ] de achtegrond beweegt met mijn poppetje mee
-- [ ] *later uitwerken*
-- [ ] *later uitwerken*
+- [ ] veel blomen en planten
+
 
 ## Credits
 - Game template van het Emmauscollege Rotterdam https://github.com/emmauscollege/4HV-game-template
