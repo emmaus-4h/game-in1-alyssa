@@ -46,10 +46,9 @@ var score = 0; // aantal behaalde punten
  * Tekent het speelveld
  */
 var tekenVeld = function () {
-  fill("red");
-  rect(20, 20, width - 2 * 20, height - 2 * 20);
-};
-
+fill("darkblue");
+rect (20,20, width - 2 * 20, height-2 * 20);
+}
 
 /**
  * Tekent de vijand
@@ -58,7 +57,7 @@ var tekenVeld = function () {
  */
 var tekenVijand = function(x, y) {
   fill("green")
-  ellipse(spelerX,spelerY,100,100);
+  ellipse(vijandX,vijandY,200,200);
     
 
 };
@@ -73,6 +72,7 @@ var tekenKogel = function(x, y) {
 
 
 };
+
 
 
 /**
@@ -91,7 +91,8 @@ rect (spelerX,spelerY,40,150)
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
 var beweegVijand = function() {
-    
+  vijandX = vijandX+1;
+  vijandY = vijandY+1
 };
 
 
@@ -99,6 +100,7 @@ var beweegVijand = function() {
  * Updatet globale variabelen met positie van kogel of bal
  */
 var beweegKogel = function() {
+  
 
 };
 
@@ -107,7 +109,7 @@ var beweegKogel = function() {
  * Kijkt wat de toetsen/muis etc zijn.
  * Updatet globale variabele spelerX en spelerY
  */
-var beweegSpeler = function() {
+var beweegSpeler = function() {if("keyIsPressed")
 spelerX = spelerX+1;
 };
 
@@ -153,7 +155,7 @@ function setup() {
   createCanvas(1280, 720);
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
-  background(135,206,255);
+  background(0,191,255);
 }
 
 
