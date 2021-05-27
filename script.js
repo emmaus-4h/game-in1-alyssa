@@ -120,6 +120,12 @@ var beweegSpeler = function() {
 };
 
 
+if (keyIsDown(LEFT_ARROW)) {
+  spelerY = spelerY - 5;
+}
+ spelerX = spelerX+1;
+ };   // als ik dit invul mislukt de hele game. misschien moet ik iets bij de else veranderen?
+
 /**
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
