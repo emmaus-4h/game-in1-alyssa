@@ -87,6 +87,7 @@ var tekenSpeler = function(x, y){
   ellipse(spelerX, spelerY, 70, 70);        // hoofd
   rect (spelerX, spelerY, 10, 110);         // romp
   rect (spelerX-75, spelerY+40, 150, 10);   // arm
+
 };
 
 
@@ -119,13 +120,12 @@ var beweegSpeler = function() {
   spelerX = spelerX+1;
 };
 
-
-if (keyIsDown(LEFT_ARROW)) {
-  spelerY = spelerY - 5;
-}
- spelerX = spelerX+1;
- };   // als ik dit invul mislukt de hele game. misschien moet ik iets bij de else veranderen?
-
+ var beweegSpeler = function() {
+  if (keyIsDown(DOWN_ARROW)) {
+    spelerY = spelerY + 5;
+  }
+  spelerX = spelerX+1;
+};
 /**
  * Zoekt uit of de vijand is geraakt
  * @returns {boolean} true als vijand is geraakt
