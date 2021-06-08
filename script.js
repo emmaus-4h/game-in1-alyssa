@@ -111,8 +111,15 @@ var tekenSpeler = function (x, y) {
    fill("black");
   rect(spelerX, spelerY, 10, 170);         // romp
   
-
+fill("ligthblue");
+ellipse(spelerX+10, spelerY,10,10);
+ellipse(spelerX-10, spelerY,10,10);       //ogen
   
+fill ("pink");
+rect(spelerX-15, spelerY+15, 30,10);   //mond
+
+
+fill("black")
   rect(spelerX - 75, spelerY + 40, 150, 10);   // arm
   
   
