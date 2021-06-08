@@ -23,10 +23,10 @@ const GAMEOVER = 2;
 var spelStatus = SPELEN;
 
 var spelerX = 200; // x-positie van speler
-var spelerY = 100; // y-positie van speler
+var spelerY = 500; // y-positie van speler
 
-var kogelX = 0;    // x-positie van kogel
-var kogelY = 0;    // y-positie van kogel
+var kogelX = 1220;    // x-positie van kogel
+var kogelY = 400;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
 var vijandY = 0;   // y-positie van vijand
@@ -47,19 +47,39 @@ var score = 0; // aantal behaalde punten
  */
 var tekenVeld = function () {
   background("blue");
-  //fill("blue");
-  //rect (20,20, width - 2 * 20, height-2 * 20);
+  fill("blue");
+  rect (20,20, width - 2 * 20, height-2 * 20);
 
-}
 
+
+//wolk
+fill ("white");
+ellipse(150,150,133,97);
+arc(150+50, 152, 80, 54, 49, HALF_PI, OPEN);
+arc(150-60, 159,80,54,1, PI+HALF_PI, OPEN);
+
+//boom
+fill ("brown");
+rect(1000, 400, 50, 300);
+fill("green");
+ellipse(1030, 400, 180, 180);
+
+//grond
+fill ("lightblue");
+rect (20, 680, 3240 - 2 * 1000, 2200 - 2 * 1000);
+
+
+
+
+};
 /**
  * Tekent de vijand
  * @param {number} x x-coördinaat
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function (x, y) {
-  fill("green")
-  ellipse(vijandX, vijandY, 150, 150);
+  fill("red")
+  ellipse(x-25, y-25, 150, 150);
 
 
 };
@@ -72,8 +92,10 @@ var tekenVijand = function (x, y) {
  */
 var tekenKogel = function (x, y) {
 
-
 };
+
+
+
 
 
 
@@ -85,8 +107,16 @@ var tekenKogel = function (x, y) {
 var tekenSpeler = function (x, y) {
   fill("black");
   ellipse(spelerX, spelerY, 70, 70);        // hoofd
+  
+   fill("black");
   rect(spelerX, spelerY, 10, 170);         // romp
+  
+
+  
   rect(spelerX - 75, spelerY + 40, 150, 10);   // arm
+  
+  
+  fill("yellow")
 rect (spelerX - 75, spelerY + 160, 150,10); // benen
 };
 
@@ -95,8 +125,11 @@ rect (spelerX - 75, spelerY + 160, 150,10); // benen
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
 var beweegVijand = function () {
-  vijandX = vijandX + 1;
-  vijandY = vijandY + 1
+ vijandX=vijandX+5;
+ 
+ if (vijandX <0){
+   vijandX = 1220;
+ }
 };
 
 
@@ -104,72 +137,10 @@ var beweegVijand = function () {
  * Updatet globale variabelen met positie van kogel of bal
  */
 
-
-//met hulp van site vanaf hier geprobeerd een score te krijgen//
-var myGamePiece;
-var myObstacles = [];
-var myScore;
-
-function startGame() {
-  myGamePiece = new component (30,30, "red", 10, 160);
-  myScore = new component ("30px", "Consolas", "black", 280, 40,"text");
-  myGameArea.start();
-}  // met hulp van een site proberen een score erbij te zetten//
-
-
-function component(width, height, color, x, y, type) {
-  this.type = type;
-  this.width = width; 
-  this.speedX = 0;
-  this.speedY = 0; 
-  this.x = x;
-  this.y = y;
-  this.update = function() {
-    ctx = myGameArea.context;
-    if (this.type == "text") {
-      ctx.font = this.width + " "+ this.height;
-      ctx.fillStyle = color;
-      ctx.fillText(this.text, this.x, this.y);
-    } else {
-      ctx.fillStyle = color;
-      ctx.fillRect(this.x, this.y, this.width, this.height);
-    }
-  }
-} // score proberen toevoegen//
-
-function updateGameArea() {
-  var x, height, gap, minHeight, maxHeight, minGap, maxGap;
-  for (i = 0; i < myObstacles.length; i += 1) {
-    if (myGamePiece.crashWith(myObstacles[i])) {
-      myGameArea.stop();
-      return;
-  }  
-}
-myGameArea.clear();
-myGameArea.frameNo +=1;
-if (myGameArea.frameNo == 1 || everyinterval(150)){x = myGameArea.canvas.width;
-minHeight = 20;
-maxHeight= 200;
-height = Math.floor(Math.random()* (maxHeight-minHeight+1)+minHeight);
-minGap = 50;
-maxGap = 200;
-gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-myObstacles.push(new component(10, height, "green", x, 0));
-myObstacles.push(new component(10, x - height - gap , "green", x, height + gap));
-}
-for (i = 0; i < myObstacles.length; i += 1) {
-  myObstacles[i].speedX = -1;
-  myObstacles[i].newPos();
-  myObstacles[i].update();
-}
-
-myScore.text = "SCORE: " + myGameArea.frameNo;
-myScore.update();
-myGamePiece.newPos();
-myGamePiece.update();
-} // poging score toevoegen//
-
 var beweegKogel = function () {
+ 
+ 
+
 
 
 };
@@ -187,8 +158,6 @@ var beweegSpeler = function () {
     spelerY = spelerY + 5;
   }
   spelerX = spelerX + 1;
-
-
 
 };
 
@@ -210,7 +179,7 @@ var checkVijandGeraakt = function () {
  */
 var checkSpelerGeraakt = function () {
 
-  return false;
+  return true;
 };
 
 
@@ -219,6 +188,7 @@ var checkSpelerGeraakt = function () {
  * @returns {boolean} true als het spel is afgelopen
  */
 var checkGameOver = function () {
+ 
 
   return false;
 };
@@ -253,8 +223,7 @@ function draw() {
 
 
       if (checkVijandGeraakt()) {
-        // punten erbij
-        // nieuwe vijand maken
+      
       }
 
       if (checkSpelerGeraakt()) {
