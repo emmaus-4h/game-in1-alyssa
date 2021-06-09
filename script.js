@@ -25,8 +25,8 @@ var spelStatus = SPELEN;
 var spelerX = 200; // x-positie van speler
 var spelerY = 500; // y-positie van speler
 
-var kogelX = 1220;    // x-positie van kogel
-var kogelY = 400;    // y-positie van kogel
+var kogelX = 0;    // x-positie van kogel
+var kogelY = 0;    // y-positie van kogel
 
 var vijandX = 0;   // x-positie van vijand
 var vijandY = 0;   // y-positie van vijand
@@ -78,8 +78,7 @@ rect (20, 680, 3240 - 2 * 1000, 2200 - 2 * 1000);
  * @param {number} y y-coördinaat
  */
 var tekenVijand = function (x, y) {
-  fill("red")
-  ellipse(x-25, y-25, 150, 150);
+  
 
 
 };
@@ -91,7 +90,8 @@ var tekenVijand = function (x, y) {
  * @param {number} y y-coördinaat
  */
 var tekenKogel = function (x, y) {
-
+  fill("red")
+  ellipse(x-25, y-25, 150, 150);
 };
 
 
@@ -108,23 +108,23 @@ var tekenSpeler = function (x, y) {
   fill("black");
   ellipse(spelerX, spelerY, 70, 70);        // hoofd
   
-   fill("black");
+  fill("black");
   rect(spelerX, spelerY, 10, 170);         // romp
   
-fill("ligthblue");
-ellipse(spelerX+10, spelerY,10,10);
-ellipse(spelerX-10, spelerY,10,10);       //ogen
-  
-fill ("pink");
-rect(spelerX-15, spelerY+15, 30,10);   //mond
+  fill("ligthblue");
+  ellipse(spelerX+10, spelerY,10,10);
+  ellipse(spelerX-10, spelerY,10,10);       //ogen
+    
+  fill ("pink");
+  rect(spelerX-15, spelerY+15, 30,10);   //mond
 
 
-fill("black")
+  fill("black")
   rect(spelerX - 75, spelerY + 40, 150, 10);   // arm
   
   
   fill("yellow")
-rect (spelerX - 75, spelerY + 160, 150,10); // benen
+  rect (spelerX - 75, spelerY + 160, 150,10); // benen
 };
 
 
@@ -132,11 +132,7 @@ rect (spelerX - 75, spelerY + 160, 150,10); // benen
  * Updatet globale variabelen met positie van vijand of tegenspeler
  */
 var beweegVijand = function () {
- vijandX=vijandX+5;
  
- if (vijandX <0){
-   vijandX = 1220;
- }
 };
 
 
@@ -145,10 +141,11 @@ var beweegVijand = function () {
  */
 
 var beweegKogel = function () {
+ kogelX = kogelX +5;
  
- 
-
-
+ if (kogelX > 1400){
+   plaatsNieuweKogel();
+ }
 
 };
 
@@ -200,6 +197,11 @@ var checkGameOver = function () {
   return false;
 };
 
+var plaatsNieuweKogel = function() {
+  kogelX = -100;
+  kogelY = spelerY;
+}
+
 
 /**
  * setup
@@ -212,6 +214,8 @@ function setup() {
 
   // Kleur de achtergrond blauw, zodat je het kunt zien
   background(0, 191, 255);
+
+  plaatsNieuweKogel();
 }
 
 
@@ -247,5 +251,9 @@ function draw() {
         spelStatus = GAMEOVER;
       }
       break;
+
+    case GAMEOVER:
+      text(100, 100, "GameOver")
   }
+    
 }
