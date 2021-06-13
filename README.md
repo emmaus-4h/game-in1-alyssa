@@ -1,6 +1,6 @@
 Deze game is gebaseerd op het template voor 4HV van het Emmauscollege Rotterdam
 
-## Mijn spel: *naam van het spel*
+## Mijn spel: *fireball*
 Gemaakt door:
 - Alyssa Sijtema
 
@@ -18,14 +18,13 @@ Basis: uitleg, spelen, afgaan en punten
 - [ ] hoe hoger het level hoe sneller de speler rent
 
 
-Uitbreiding: *mijn poppetje vlucht voor coronabacteriën*
+Uitbreiding: *mijn poppetje vlucht voor de kogel*
 - [ ] mijn poppetje rent over blokken
 - [ ] blokken tekenen 
 - [ ] laten rennen over de blokken
 
 Uitbreiding: * bewegende achtergrond*
-- [ ] de achtegrond beweegt met mijn poppetje mee
-- [ ] veel blomen en planten
+- [ ] bomen en planten
 
 
 ## Credits
